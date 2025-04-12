@@ -1,0 +1,241 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@400;600&display=swap');
+
+/* Starry background animation layers */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.stars {
+  background-image: radial-gradient(#dbeafe 1px, transparent 1px);
+  background-size: 3px 3px;
+  animation: moveStars 200s linear infinite;
+}
+
+.stars2 {
+  background-image: radial-gradient(#93c5fd 1px, transparent 1px);
+  background-size: 4px 4px;
+  animation: moveStars 300s linear infinite;
+}
+
+.stars3 {
+  background-image: radial-gradient(#60a5fa 1px, transparent 1px);
+  background-size: 5px 5px;
+  animation: moveStars 400s linear infinite;
+}
+
+@keyframes moveStars {
+  0% { background-position: 0 0; }
+  100% { background-position: 10000px 10000px; }
+}
+
+/* General Layout */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(270deg, #cce3ff, #b3d9ff, #e0f2ff, #cce3ff);
+  background-size: 800% 800%;
+  animation: gradientFlow 20s ease infinite;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 3rem;
+  color: #1e3a8a;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease-in-out;
+  letter-spacing: 1px;
+}
+
+.container {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  width: 200px;
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  padding: 25px 20px;
+  border-radius: 20px 40px 20px 40px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  animation: slideUp 1s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s;
+}
+
+.card:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card img.profile {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 4px solid #3b82f6;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.3rem;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.links {
+  margin-top: 15px;
+}
+
+.links a {
+  display: inline-block;
+  margin: 5px 8px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.links a:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
+}
+
+.refresh-btn {
+  margin-top: 40px;
+  background: linear-gradient(to right, #3b82f6, #60a5fa);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.refresh-btn:hover {
+  transform: scale(1.1);
+  background: #2563eb;
+}
+
+/* Animations */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.falling-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .falling-bg span {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(96, 165, 250, 0.5);
+    border-radius: 50%;
+    animation: fallDown linear infinite;
+    bottom: 100%;
+  }
+  
+  .falling-bg span:nth-child(1) {
+    left: 10%;
+    animation-duration: 6s;
+    animation-delay: 0s;
+  }
+  .falling-bg span:nth-child(2) {
+    left: 20%;
+    animation-duration: 8s;
+    animation-delay: 1s;
+  }
+  .falling-bg span:nth-child(3) {
+    left: 30%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+  }
+  .falling-bg span:nth-child(4) {
+    left: 40%;
+    animation-duration: 5s;
+    animation-delay: 3s;
+  }
+  .falling-bg span:nth-child(5) {
+    left: 50%;
+    animation-duration: 9s;
+    animation-delay: 1.5s;
+  }
+  .falling-bg span:nth-child(6) {
+    left: 60%;
+    animation-duration: 6s;
+    animation-delay: 0.5s;
+  }
+  .falling-bg span:nth-child(7) {
+    left: 70%;
+    animation-duration: 8s;
+    animation-delay: 2.5s;
+  }
+  .falling-bg span:nth-child(8) {
+    left: 80%;
+    animation-duration: 5s;
+    animation-delay: 0.2s;
+  }
+  .falling-bg span:nth-child(9) {
+    left: 90%;
+    animation-duration: 7s;
+    animation-delay: 1.2s;
+  }
+  .falling-bg span:nth-child(10) {
+    left: 100%;
+    animation-duration: 10s;
+    animation-delay: 0.8s;
+  }
+  
+  @keyframes fallDown {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(110vh) scale(0.5);
+      opacity: 0;
+    }
+  }
