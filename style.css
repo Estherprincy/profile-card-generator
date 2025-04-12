@@ -71,6 +71,7 @@ h1 {
 
 .card {
   width: 100px;
+  height: 100px;
   background: #ffffffcc;
   backdrop-filter: blur(6px);
   padding: 25px 20px;
